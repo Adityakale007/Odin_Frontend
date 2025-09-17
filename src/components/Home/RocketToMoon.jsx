@@ -1,20 +1,14 @@
 import React from "react";
-import { motion } from "framer-motion";
-import moon from "../../assets/moon.png";
 import earth from "../../assets/earth.png";
+import moon from "../../assets/moon.png";
 
-export default function RocketToMoon({
-  earthImg = "https://www.nasa.gov/wp-content/uploads/2023/06/earth.jpg",
-  moonImg = "https://www.nasa.gov/wp-content/uploads/2023/07/moon.jpg",
-  rocketImg = "https://upload.wikimedia.org/wikipedia/commons/4/47/SpaceX_Falcon_9.jpg",
-  duration = 6, // seconds for one-way
-}) {
+export default function RocketToMoon() {
   return (
-    <div className="relative w-full min-h-screen flex items-center justify-center">
+    <div className="relative w-full h-full overflow-visible pointer-events-none">
       {/* Earth */}
       <div
-        className="absolute left-12 bottom-[35rem] w-[85rem] h-[85rem] rounded-full overflow-hidden
-                   shadow-[0_0_40px_15px_rgba(0,150,255,0.9)] z-10"
+        className="absolute left-1/2 -translate-x-1/2 -top-[25vh] w-[clamp(40rem,55vw,90rem)] h-[clamp(40rem,55vw,90rem)] rounded-full overflow-hidden
+                   shadow-[0_0_40px_15px_rgba(0,150,255,0.9)] z-0"
       >
         <img
           src={earth}
@@ -26,20 +20,20 @@ export default function RocketToMoon({
         />
       </div>
 
-      {/* Moon
+      {/* Moon (half visible at the bottom) */}
       <div
-        className="absolute right-24 top-32 w-48 h-48 rounded-full overflow-hidden
-                   shadow-[0_0_30px_12px_rgba(255,255,200,0.9)] z-10"
+        className="absolute left-1/2 -translate-x-1/2 bottom-[-10vh] w-[clamp(40rem,55vw,90rem)] h-[clamp(40rem,55vw,90rem)] rounded-full overflow-hidden
+                   shadow-[0_0_30px_12px_rgba(255,255,200,0.9)] z-0"
       >
         <img
-          src={moonImg}
+          src={moon}
           alt="Moon"
           className="w-full h-full object-cover"
           style={{
             filter: "brightness(1.1) contrast(1.2) drop-shadow(0 0 15px rgba(255, 255, 200, 0.8))",
           }}
         />
-      </div> */}
+      </div>
 
       {/* Rocket
       <motion.img
