@@ -18,7 +18,7 @@ const HomeButton = () => {
 
   return (
     <button
-      className="w-40 py-2  bg-black/80 hover:bg-gray-900 text-white font-bold rounded-lg shadow-lg hover:shadow-xl border-2 border-dotted border-white transition duration-300 ease-in-out"
+      className="w-[clamp(120px,40vw,180px)] py-1.5 sm:py-2 px-3 bg-black/80 hover:bg-gray-900 text-white font-bold text-sm sm:text-base rounded-lg shadow-lg hover:shadow-xl border-2 border-dotted border-white transition duration-300 ease-in-out"
       onClick={handleClick}
     >
       Back
