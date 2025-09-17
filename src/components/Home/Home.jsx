@@ -110,7 +110,7 @@ const Home = () => {
           scrollEnd='bottom 60%'
           stagger={0.3}
           containerClassName='mx-auto px-2 sm:px-4 md:px-6 lg:px-8 whitespace-normal'
-          textClassName='text-white font-semibold text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl leading-relaxed'
+          textClassName='text-white font-bold text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl leading-relaxed'
         >
           ODIN is the ultimate AI co-pilot, dynamically planning and re-planning Earth-to-Moon trajectories in real-time. We're not just mapping a route; we're ensuring crew safety and mission success with every decision.
         </ScrollFloat>
