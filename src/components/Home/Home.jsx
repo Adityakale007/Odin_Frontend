@@ -4,9 +4,9 @@ import Galaxy from './Galaxy';
 import TextType from './TextType';
 import ScrollFloat from './ScrollFloat';
 import CardNav from './CardNav';
-import RocketToMoon from './RocketToMoon';
-import RocketToMoon2 from './RocketToMoon2';
 import TargetCursor from '../Radar/TargetCursor';
+import earthImg from '../../assets/earth.png';
+import moonImg from '../../assets/moon.png';
 
 // StartButton component for navigation
 const StartButton = ({ onClick, label }) => (
@@ -49,7 +49,8 @@ const Home = () => {
   return (
     <div className='bg-black relative min-h-screen text-white'>
       {/* Galaxy background fixed */}
-      <div className="fixed inset-0 z-0 w-full h-full pointer-events-none">
+      <div className="absolute inset-0 z-0 w-full h-full pointer-events-none">
+
         <Galaxy
           mouseRepulsion={false}
           mouseInteraction={false}
@@ -115,55 +116,62 @@ const Home = () => {
         </ScrollFloat>
       </section>
 
-      {/* RocketToMoon animation */}
-      <div className="hidden lg:flex absolute inset-0 z-0 -top-[20rem] items-center justify-center pointer-events-none">
-        <RocketToMoon
-          earthImg="earth.png"
-          moonImg="moon.png"
-          rocketImg="rocket.png"
-          duration={10}
-        />
-      </div>
+      {/* Planets overlay (fixed, clipped to viewport) */}
+      <div className="block absolute inset-0 z-0 overflow-hidden pointer-events-none">
+  <div className="absolute -top-[clamp(0vh,80vh,100vh)] left-1/2 -translate-x-1/2 w-full h-1/2 ">
+    <img
+      src={earthImg}
+      alt="Earth"
+      className="absolute top-0 left-1/2 -translate-x-1/2 
+                 w-[clamp(32rem,90vw,190rem)] h-[clamp(32rem,90vw,190rem)] 
+                 rounded-full object-cover shadow-[0_0_40px_15px_rgba(0,150,255,0.9)]"
+    />
+  </div>
+</div>
 
-      {/* Video section */}
-      <div className="flex items-center justify-center min-h-screen px-4 sm:px-6 md:px-8 lg:px-12 -mt-10 md:-mt-20">
-        <div
-          className="w-full max-w-xs sm:max-w-sm md:max-w-2xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl aspect-[16/9] rounded-lg overflow-hidden"
-          style={{
-            position: "relative",
-            boxShadow: `
-              0 0 12px rgba(0, 255, 200, 0.4),
-              0 0 12px rgba(0, 255, 200, 0.6),
-              0 0 12px rgba(0, 255, 200, 0.4),
-              0 0 12px rgba(0, 255, 200, 0.6)
-            `
-          }}
-        >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-contain bg-black"
-          >
-            <source 
-              src="https://res.cloudinary.com/dgmgjphac/video/upload/v1758104405/ODIN_video_r672wa.mp4" 
-              type="video/mp4" 
-            />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
+     {/* Moon overlay (absolute, clipped to viewport) */}
+            <div className="hidden md:block absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <div className="absolute -bottom-[clamp(100vh,120vh,100vh)] left-1/2 -translate-x-1/2 w-full h-1/2 ">
+  <img
+    src={moonImg}
+    alt="Moon"
+    className="absolute top-0 left-1/2 -translate-x-1/2 
+                 w-[clamp(32rem,90vw,190rem)] h-[clamp(32rem,90vw,190rem)] 
+                 rounded-full object-cover shadow-[0_0_30px_12px_rgba(255,255,200,0.9)]"
+  />
+</div>
+            </div>
 
-      {/* RocketToMoon2 */}
-      {/* <div className="hidden xl:block absolute z-0 w-[20rem] h-[20rem] 2xl:w-[30rem] 2xl:h-[30rem] bottom-[30rem] right-[10rem] 2xl:bottom-[58rem] 2xl:right-[55rem]">
-        <RocketToMoon2
-          earthImg="earth.png"
-          moonImg="moon.png"
-          rocketImg="rocket.png"
-          duration={10}
-        />
-      </div> */}
+{/* Video section (higher z-index so it sits above moon) */}
+<div className="relative flex items-center justify-center min-h-screen px-4 sm:px-6 md:px-8 lg:px-12 -mt-10 md:-mt-20 z-10">
+  <div
+    className="w-full max-w-xs sm:max-w-sm md:max-w-2xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl rounded-lg overflow-hidden relative"
+    style={{
+      boxShadow: `
+        0 0 12px rgba(0, 255, 200, 0.4),
+        0 0 12px rgba(0, 255, 200, 0.6),
+        0 0 12px rgba(0, 255, 200, 0.4),
+        0 0 12px rgba(0, 255, 200, 0.6)
+      `
+    }}
+  >
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="w-full h-full object-cover bg-black"
+    >
+      <source 
+        src="https://res.cloudinary.com/dgmgjphac/video/upload/v1758029073/Screen_Recording_2025-09-16_at_6.47.27_PM_znbjht.mp4" 
+        type="video/mp4" 
+      />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+
 
       {/* Custom cursor */}
       <TargetCursor
