@@ -201,20 +201,24 @@ export default function RadarBackground() {
       />
 
       {/* Controls */}
-      <div className="absolute top-2 left-4 sm:left-10 md:left-14 flex flex-col space-y-3 z-20">
-        <HomeButton />
+      <div>
+        <div className="absolute left-3 sm:left-8 md:left-14 flex flex-col space-y-2 sm:space-y-3 z-20">
+          <HomeButton />
+        </div>
+        <div className="absolute top-24 left-1/2 -translate-x-1/2 sm:top-12 sm:left-10 sm:translate-x-0 md:left-auto z-20">
+          <DateChooser />
+        </div>
       </div>
-      <div className="absolute top-10 left-4 sm:left-10 md:left-auto flex flex-col space-y-3 z-20">
-        <DateChooser />
-      </div>
-      <div className="absolute bottom-6 sm:bottom-8 md:bottom-10 right-4 sm:right-6 flex flex-col items-center space-y-1 z-20">
-        <Terminal running={terminalRunning} />
-      </div>
-      <div className="absolute bottom-2 right-6 md:right-40 flex flex-col items-center space-y-1 z-20">
-        <StartButton
-          label="Choose Best Path"
-          onClick={fetchTrajectoryAndStart}
-        />
+      <div>
+         <div className="absolute bottom-12 sm:bottom-14 md:bottom-16 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-6 flex flex-col items-center space-y-1 z-20">
+          <Terminal running={terminalRunning} />
+        </div>
+         <div className="absolute bottom-1 left-[47%] -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 md:bottom-2 flex flex-col items-center space-y-1 z-20">
+          <StartButton
+            label="Choose Best Path"
+            onClick={fetchTrajectoryAndStart}
+          />
+        </div>
       </div>
     </div>
   );
