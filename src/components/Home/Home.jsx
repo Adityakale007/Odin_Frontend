@@ -147,7 +147,7 @@ const Home = () => {
             className="w-full h-full object-contain bg-black"
           >
             <source 
-              src="https://res.cloudinary.com/dgmgjphac/video/upload/v1758101499/ODIN_pa7tdk.mov" 
+              src="https://res.cloudinary.com/dgmgjphac/video/upload/v1758104405/ODIN_video_r672wa.mp4" 
               type="video/mp4" 
             />
             Your browser does not support the video tag.
