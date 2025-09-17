@@ -112,7 +112,7 @@ const Home = () => {
           containerClassName='mx-auto px-2 sm:px-4 md:px-6 lg:px-8 whitespace-normal'
           textClassName='text-white font-mono font-bold text-md xs:text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl leading-relaxed'
         >
-          ODIN is the ultimate AI co-pilot, dynamically planning and re-planning Earth-to-Moon trajectories in real-time. We're not just mapping a route, we're ensuring crew safety and mission success with every decision.
+          ODIN  is  the  ultimate  AI  co-pilot,  dynamically  planning  and  re-planning  Earth-to-Moon  trajectories  in  real-time.  We're  not  just  mapping  a  route,  we're  ensuring  crew  safety  and  mission  success  with  every  decision.
         </ScrollFloat>
       </section>
 
