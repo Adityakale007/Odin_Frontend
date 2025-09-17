@@ -91,13 +91,13 @@ export default function Terminal({ running }) {
 
   return (
     <div
-      className="absolute bottom-6 right-6 w-96 h-64 bg-black/90 border border-white/30 rounded-lg p-4 text-green-400 font-mono text-xs overflow-hidden z-20"
+      className="w-[clamp(220px,90vw,384px)] h-[clamp(140px,36vh,256px)] bg-black/90 border border-white/30 rounded-lg p-2 sm:p-3 text-green-400 font-mono text-[10px] sm:text-xs overflow-hidden z-20"
       style={{
         boxShadow: `
-          0 0 12px rgba(0, 255, 200, 0.2),   /* top glow */
-          0 0 12px rgba(0, 255, 200, 0.4),   /* bottom glow */
-          0 0 12px rgba(0, 255, 200, 0.2),   /* left glow */
-          0 0 12px rgba(0, 255, 200, 0.4)    /* right glow */
+          0 0 12px rgba(0, 255, 200, 0.2),
+          0 0 12px rgba(0, 255, 200, 0.4),
+          0 0 12px rgba(0, 255, 200, 0.2),
+          0 0 12px rgba(0, 255, 200, 0.4)
         `
       }}
     >
