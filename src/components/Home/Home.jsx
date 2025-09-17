@@ -49,15 +49,15 @@ const Home = () => {
   return (
     <div className='bg-black relative min-h-screen text-white'>
       {/* Galaxy background fixed */}
-      <div className="absolute inset-0 z-0 w-full h-full pointer-events-none">
+      <div className="fixed inset-0 z-0 w-full h-full pointer-events-none">
 
         <Galaxy
           mouseRepulsion={false}
           mouseInteraction={false}
-          density={1.5}
+          density={0.4}
           glowIntensity={0.5}
           saturation={0.8}
-          hueShift={140}
+          hueShift={100}
           transparent={true}
         />
       </div>
