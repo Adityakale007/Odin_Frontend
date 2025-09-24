@@ -1,6 +1,6 @@
 # 🌌 Space Route Optimizer  
 
-MoonPath is an interactive space navigation simulator that calculates the **shortest and fastest path from Earth to the Moon**, intelligently avoiding **space debris** and **planetary radiation fields**. This project combines **astrophysics-inspired algorithms** with **visual radar simulation** to help visualize safe and efficient lunar travel routes.  
+Space Route Optimizer is an interactive space navigation simulator that calculates the **shortest and fastest path from Earth to the Moon**, intelligently avoiding **space debris** and **planetary radiation fields**. This project combines **astrophysics-inspired algorithms** with **visual radar simulation** to help visualize safe and efficient lunar travel routes.  
 
 ## 🚀 Features  
 
